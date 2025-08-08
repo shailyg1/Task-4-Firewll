@@ -1,0 +1,14 @@
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    Anywhere                   # allow SSH (prevent lockout)
+23/tcp                     DENY IN     Anywhere                   # Block Telnet (test)
+Anywhere on lo             ALLOW IN    Anywhere                  
+22/tcp (v6)                ALLOW IN    Anywhere (v6)              # allow SSH (prevent lockout)
+23/tcp (v6)                DENY IN     Anywhere (v6)              # Block Telnet (test)
+Anywhere (v6) on lo        ALLOW IN    Anywhere (v6)             
+
